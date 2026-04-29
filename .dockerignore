@@ -1,0 +1,9 @@
+.git
+*.exe
+configlinter
+configlinter.exe
+vendor/
+testdata/
+*.md
+.idea/
+.vscode/

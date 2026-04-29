@@ -1,0 +1,16 @@
+services:
+  configlinter:
+    build: .
+    container_name: configlinter
+    ports:
+      - "8080:8080"
+      - "9090:9090"
+    environment:
+      - HTTP_PORT=8080
+      - GRPC_PORT=9090
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://localhost:8080/health"]
+      interval: 10s
+      timeout: 3s
+      retries: 3

@@ -1,0 +1,11 @@
+[server]
+host = "127.0.0.1"
+port = 8080
+tls_enabled = false
+
+[database]
+password = "supersecret123"
+encryption = "AES-256"
+
+[logging]
+level = "debug"

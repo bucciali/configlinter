@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package configlinter;
+
+option go_package = "configlinter/proto/pb";
+
+enum Format {
+  FORMAT_UNKNOWN = 0;
+  FORMAT_JSON = 1;
+  FORMAT_YAML = 2;
+  FORMAT_TOML = 3;
+}
+
+service ConfigLinter {
+  rpc CheckConfig (CheckRequest) returns (CheckResponse);
+}
+
+message CheckRequest {
+  string content = 1;
+  Format format = 2;
+}
+
+message CheckResponse {
+  repeated Issue issues = 1;
+}
+
+message Issue {
+  string rule_id = 1;
+  string severity = 2;
+  string path = 3;
+  string message = 4;
+  string recommendation = 5;
+}

@@ -1,0 +1,14 @@
+{
+  "server": {
+    "host": "0.0.0.0",
+    "port": 8080,
+    "tls_enabled": false
+  },
+  "database": {
+    "password": "admin123",
+    "encryption": "md5"
+  },
+  "logging": {
+    "level": "debug"
+  }
+}
